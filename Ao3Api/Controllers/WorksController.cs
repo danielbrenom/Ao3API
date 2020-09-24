@@ -21,22 +21,28 @@ namespace Ao3Api.Controllers
         public async Task<JsonResult> Index()
         {
             var works = await _worksService.Works();
-            return Json(new WorksResponse
+            return Json(new WorkListResponse
             {
                 Works = works,
                 Page = 1
             });
         }
 
-        [HttpGet("/search")]
+        [HttpGet("/works/search")]
         public async Task<JsonResult> Search([FromQuery] SearchRequest request)
         {
             var works = await _worksService.Search(request);
-            return Json(new WorksResponse
+            return Json(new WorkListResponse
             {
                 Works = works,
                 Page = int.Parse(request.Page ?? "1")
             });
+        }
+
+        [HttpGet("/works/{workId}")]
+        public async Task<JsonResult> Work(int workId)
+        {
+            return Json(new WorkListResponse());
         }
     }
 }

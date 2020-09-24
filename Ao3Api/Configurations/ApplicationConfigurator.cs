@@ -2,7 +2,6 @@
 using Ao3Api.Interfaces;
 using Ao3Api.Mock.Client;
 using Ao3Api.Services;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ao3Api.Configurations
@@ -11,6 +10,7 @@ namespace Ao3Api.Configurations
     {
         public static void ConfigureServices(IServiceCollection service)
         {
+            service.AddMemoryCache();
             service.AddSingleton<IWorksService, WorksService>();
             service.AddSingleton<IHtmlWeb, Ao3HtmlWeb>();
             service.AddSingleton<IAo3Client, Ao3Client>();
