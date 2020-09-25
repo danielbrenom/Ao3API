@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Ao3Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     [Route("[controller]/[action]")]
     public class WorksController : Controller
     {
@@ -18,6 +17,7 @@ namespace Ao3Api.Controllers
             _worksService = worksService;
         }
 
+        [HttpGet("/works")]
         public async Task<JsonResult> Index()
         {
             var works = await _worksService.Works();
@@ -28,7 +28,7 @@ namespace Ao3Api.Controllers
             });
         }
 
-        [HttpGet("/works/search")]
+        // [HttpGet("/works/search")]
         public async Task<JsonResult> Search([FromQuery] SearchRequest request)
         {
             var works = await _worksService.Search(request);
@@ -42,7 +42,12 @@ namespace Ao3Api.Controllers
         [HttpGet("/works/{workId}")]
         public async Task<JsonResult> Work(int workId)
         {
-            return Json(new WorkListResponse());
+            var work = await _worksService.Work(workId);
+            return Json(new WorkResponse
+            {
+                WorkDetails = work,
+                Chapters = work.Chapters
+            });
         }
     }
 }

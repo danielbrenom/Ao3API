@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Ao3Api.Models
+namespace Ao3Api.Models.Data
 {
     public class Work
     {
+        [JsonProperty("WorkId")] public int WorkId { get; set; }
         [JsonProperty("Title")] public string Title { get; set; }
         [JsonProperty("Link")] public string Link { get; set; }
         [JsonProperty("Fandom")] public List<string> Fandom { get; set; }

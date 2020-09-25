@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Ao3Api.Models.Data;
 using Newtonsoft.Json;
 
 namespace Ao3Api.Models.Response

@@ -7,5 +7,6 @@ namespace Ao3Api.Interfaces
     {
         public Task<HtmlDocument> GetWorks();
         public Task<HtmlDocument> GetWorks(string query);
+        public Task<HtmlDocument> GetWork(int workId);
     }
 }

@@ -17,11 +17,10 @@ namespace Ao3Api.Mock.Client
             var file = "";
             Ao3ResponseBook.RouteBook.ForAll(routes =>
             {
-                if (Regex.IsMatch(url, Regex.Replace(routes.Key, "([/?+])", "\\$1")))
+                if (Regex.IsMatch(url, Regex.Replace(routes.Key, "([/?]+)", "\\$1")))
                     file = File.ReadAllText(routes.Value);
             });
             htmlDocument.LoadHtml(file);
-
             return Task.FromResult(htmlDocument);
         }
     }

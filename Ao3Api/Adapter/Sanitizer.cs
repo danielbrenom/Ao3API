@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Ao3Api.Adapter
 {
-    public class StringSanitizer
+    public static class Sanitizer
     {
         public static string LineSpaceSanitizer(string text)
         {
@@ -28,6 +28,16 @@ namespace Ao3Api.Adapter
         public static string NumberSanitizer(string number)
         {
             return number == string.Empty ? "0" : Regex.Replace(number, ",", "");
+        }
+
+        public static string IdSanitizer(string url)
+        {
+            return url == string.Empty ? "0" : Regex.Match(url, "\\d+").Value;
+        }
+
+        public static string ChapterSanitizer(string uri)
+        {
+            return uri == string.Empty ? "0" : Regex.Match(uri, "\\d+$").Value;
         }
     }
 }

@@ -19,5 +19,10 @@ namespace Ao3Api.Client
         {
             return await Client.LoadFromWebAsync(Ao3Routes.Search + query);
         }
+
+        public async Task<HtmlDocument> GetWork(int workId)
+        {
+            return await Client.LoadFromWebAsync(Ao3Routes.Navigation(workId));
+        }
     }
 }
