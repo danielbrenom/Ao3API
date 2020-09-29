@@ -11,5 +11,6 @@ namespace Ao3Api.Interfaces
         public Task<List<Work>> Works();
         public Task<WorkIndexing> Work(int workId);
         public Task<List<Work>> Search(SearchRequest request);
+        public Task<WorkChapter> WorkChapter(int workId, int workChapter);
     }
 }

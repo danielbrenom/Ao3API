@@ -24,5 +24,10 @@ namespace Ao3Api.Client
         {
             return await Client.LoadFromWebAsync(Ao3Routes.Navigation(workId));
         }
+
+        public async Task<HtmlDocument> GetWorkChapter(int workId, int chapterId)
+        {
+            return await Client.LoadFromWebAsync(Ao3Routes.Chapter(workId, chapterId));
+        }
     }
 }

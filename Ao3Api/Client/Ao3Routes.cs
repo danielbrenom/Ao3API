@@ -8,6 +8,11 @@
         public static string Navigation(int work)
         {
             return $"/works/{work}/navigate";
-        } 
+        }
+
+        public static string Chapter(int work, int chapter)
+        {
+            return $"/works/{work}/chapters/{chapter}";
+        }
     }
 }

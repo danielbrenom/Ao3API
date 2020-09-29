@@ -59,7 +59,7 @@ namespace Ao3Api.Services
             }
 
             var workAdapted = WorkAdapter.ExtractWork(webDocument);
-            if (cachedWork == null) return workAdapted;
+            if (cachedWork is null) return workAdapted;
             workAdapted.Title = cachedWork.Title;
             workAdapted.Comments = cachedWork.Comments;
             workAdapted.Kudos = cachedWork.Kudos;
@@ -67,7 +67,34 @@ namespace Ao3Api.Services
             workAdapted.Language = cachedWork.Language;
             workAdapted.Link = cachedWork.Link;
             workAdapted.Words = cachedWork.Words;
+            _cache.GetOrCreate("WorkIndexedCache", entry =>
+            {
+                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(15);
+                entry.SetPriority(CacheItemPriority.High);
+                return workAdapted;
+            });
             return workAdapted;
+        }
+
+        public async Task<WorkChapter> WorkChapter(int workId, int chapterId)
+        {
+            var webDocument = await _client.GetWorkChapter(workId, chapterId);
+            WorkIndexing cachedWork = null;
+            var chapterAdapted = ChapterAdapter.ExtractChapter(webDocument);
+            if (_cache.TryGetValue("WorkIndexedCache", out WorkIndexing cachedWorkIndexed))
+            {
+                cachedWork = cachedWorkIndexed.WorkId == chapterAdapted.WorkDetails.WorkId ? cachedWorkIndexed : null;
+            }
+
+            if (cachedWork is null) return chapterAdapted;
+            chapterAdapted.WorkDetails.Title = cachedWork.Title;
+            chapterAdapted.WorkDetails.Comments = cachedWork.Comments;
+            chapterAdapted.WorkDetails.Kudos = cachedWork.Kudos;
+            chapterAdapted.WorkDetails.Fandom = cachedWork.Fandom;
+            chapterAdapted.WorkDetails.Language = cachedWork.Language;
+            chapterAdapted.WorkDetails.Link = cachedWork.Link;
+            chapterAdapted.WorkDetails.Words = cachedWork.Words;
+            return chapterAdapted;
         }
     }
 }

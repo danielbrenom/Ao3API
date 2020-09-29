@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Ao3Api.Models.Data;
+using Ao3Api.Models.Response;
+using AutoMapper;
 
 namespace Ao3Api.Configurations
 {
@@ -6,7 +8,8 @@ namespace Ao3Api.Configurations
     {
         public MapperConfigurator()
         {
-            
+            CreateMap<WorkIndexing, WorkResponse>().ReverseMap();
+            //CreateMap<WorkChapter, WorkChapterResponse>().ReverseMap();
         }
     }
 }

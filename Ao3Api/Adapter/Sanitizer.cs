@@ -8,7 +8,7 @@ namespace Ao3Api.Adapter
     {
         public static string LineSpaceSanitizer(string text)
         {
-            return Regex.Replace(text, "[\\n]+\\s+"," ");
+            return Regex.Replace(text, "[\\n\\s]+"," ");
         }
 
         public static string ListToStringSanitizer(List<string> text)
@@ -38,6 +38,11 @@ namespace Ao3Api.Adapter
         public static string ChapterSanitizer(string uri)
         {
             return uri == string.Empty ? "0" : Regex.Match(uri, "\\d+$").Value;
+        }
+
+        public static string ChapterToIdSanitizer(string uri)
+        {
+            return uri == string.Empty ? "0" : Regex.Match(uri, "\\d+").Value;
         }
     }
 }

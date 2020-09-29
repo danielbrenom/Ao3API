@@ -49,5 +49,12 @@ namespace Ao3Api.Controllers
                 Chapters = work.Chapters
             });
         }
+
+        [HttpGet("/works/{workId}/chapters/{chapterId}")]
+        public async Task<JsonResult> WorkChapter(int workId, int chapterId)
+        {
+            var chapter = await _worksService.WorkChapter(workId, chapterId);
+            return Json(chapter);
+        }
     }
 }
