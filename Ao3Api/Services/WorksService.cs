@@ -79,22 +79,7 @@ namespace Ao3Api.Services
         public async Task<WorkChapter> WorkChapter(int workId, int chapterId)
         {
             var webDocument = await _client.GetWorkChapter(workId, chapterId);
-            WorkIndexing cachedWork = null;
-            var chapterAdapted = ChapterAdapter.ExtractChapter(webDocument);
-            if (_cache.TryGetValue("WorkIndexedCache", out WorkIndexing cachedWorkIndexed))
-            {
-                cachedWork = cachedWorkIndexed.WorkId == chapterAdapted.WorkDetails.WorkId ? cachedWorkIndexed : null;
-            }
-
-            if (cachedWork is null) return chapterAdapted;
-            chapterAdapted.WorkDetails.Title = cachedWork.Title;
-            chapterAdapted.WorkDetails.Comments = cachedWork.Comments;
-            chapterAdapted.WorkDetails.Kudos = cachedWork.Kudos;
-            chapterAdapted.WorkDetails.Fandom = cachedWork.Fandom;
-            chapterAdapted.WorkDetails.Language = cachedWork.Language;
-            chapterAdapted.WorkDetails.Link = cachedWork.Link;
-            chapterAdapted.WorkDetails.Words = cachedWork.Words;
-            return chapterAdapted;
+            return ChapterAdapter.ExtractChapter(webDocument);
         }
     }
 }

@@ -1,25 +1,37 @@
-﻿using Ao3Api.Client;
+﻿using System;
+using Ao3Api.Client;
 using Ao3Api.Interfaces;
 using Ao3Api.Mock.Client;
 using Ao3Api.Services;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Ao3Api.Configurations
 {
     public class ApplicationConfigurator
     {
-        public static void ConfigureServices(IServiceCollection service)
+        private readonly IServiceCollection _serviceCollection;
+        private readonly IWebHostEnvironment _environment;
+        public ApplicationConfigurator(IServiceCollection service, IWebHostEnvironment env)
         {
-            service.AddMemoryCache();
-            service.AddSingleton<IWorksService, WorksService>();
-            service.AddSingleton<IHtmlWeb, Ao3HtmlWeb>();
-            service.AddSingleton<IAo3Client, Ao3Client>();
-            ConfigureMocks(service);
+            _serviceCollection = service;
+            _environment = env;
+        }
+        public ApplicationConfigurator ConfigureServices()
+        {
+            _serviceCollection.AddMemoryCache();
+            _serviceCollection.AddSingleton<IWorksService, WorksService>();
+            _serviceCollection.AddSingleton<IHtmlWeb, Ao3HtmlWeb>();
+            _serviceCollection.AddSingleton<IAo3Client, Ao3Client>();
+            return this;
         }
 
-        private static void ConfigureMocks(IServiceCollection service)
+        public ApplicationConfigurator ConfigureMocks()
         {
-            service.AddSingleton<IHtmlWeb, Ao3HtmlWebMock>();
+            if (!_environment.IsDevelopment()) return this;
+            _serviceCollection.AddSingleton<IHtmlWeb, Ao3HtmlWebMock>();
+            return this;
         }
     }
 }
