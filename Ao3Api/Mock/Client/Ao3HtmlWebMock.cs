@@ -1,9 +1,8 @@
 ﻿using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Ao3Api.Client;
-using Ao3Api.Interfaces;
 using Ao3Api.Mock.Client.Responses;
+using Ao3Domain.Interfaces;
 using AutoMapper.Internal;
 using HtmlAgilityPack;
 

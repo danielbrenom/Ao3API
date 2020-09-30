@@ -1,8 +1,7 @@
-﻿using System;
-using Ao3Api.Client;
-using Ao3Api.Interfaces;
+﻿using Ao3Api.Client;
 using Ao3Api.Mock.Client;
 using Ao3Api.Services;
+using Ao3Domain.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

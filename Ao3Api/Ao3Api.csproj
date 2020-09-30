@@ -17,5 +17,9 @@
       <Compile Remove="Configurations\HungryPizzaMongoSettings.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Ao3Domain\Ao3Domain.csproj" />
+    </ItemGroup>
+
 
 </Project>

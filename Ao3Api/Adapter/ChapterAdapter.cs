@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
-using Ao3Api.Models.Data;
+﻿using System.Linq;
+using Ao3Domain.Helpers;
+using Ao3Domain.Models.Data;
 using Fizzler.Systems.HtmlAgilityPack;
 using HtmlAgilityPack;
 

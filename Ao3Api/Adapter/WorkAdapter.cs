@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ao3Api.Client;
-using Ao3Api.Models.Data;
+using Ao3Domain.Helpers;
+using Ao3Domain.Models.Data;
 using Fizzler.Systems.HtmlAgilityPack;
 using HtmlAgilityPack;
 

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Ao3Api.Models.Data;
+using Ao3Domain.Models.Data;
 using Newtonsoft.Json;
 
-namespace Ao3Api.Models.Response
+namespace Ao3Domain.Models.Response
 {
     public class WorkResponse
     {

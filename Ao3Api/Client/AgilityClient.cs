@@ -1,4 +1,4 @@
-﻿using Ao3Api.Interfaces;
+﻿using Ao3Domain.Interfaces;
 
 namespace Ao3Api.Client
 {

@@ -1,5 +1,5 @@
-﻿using Ao3Api.Models.Data;
-using Ao3Api.Models.Response;
+﻿using Ao3Domain.Models.Data;
+using Ao3Domain.Models.Response;
 using AutoMapper;
 
 namespace Ao3Api.Configurations

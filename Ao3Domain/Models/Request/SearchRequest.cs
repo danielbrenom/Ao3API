@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ao3Api.Models.Request
+namespace Ao3Domain.Models.Request
 {
     public class SearchRequest
     {

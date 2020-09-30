@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Ao3Api.Models.Data
+namespace Ao3Domain.Models.Data
 {
     public class Work
     {

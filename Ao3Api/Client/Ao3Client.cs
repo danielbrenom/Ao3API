@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Ao3Api.Interfaces;
+using Ao3Domain.Interfaces;
 using HtmlAgilityPack;
 
 namespace Ao3Api.Client
