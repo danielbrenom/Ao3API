@@ -3,7 +3,7 @@ using AutoMapper;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ao3Domain.Extensions
+namespace Ao3Api.Extensions
 {
     public static class TypeExtensions
     {
