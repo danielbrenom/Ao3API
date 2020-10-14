@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Ao3Domain.Interfaces;
+using Ao3Api.Interfaces;
 using Fizzler.Systems.HtmlAgilityPack;
 using HtmlAgilityPack;
 

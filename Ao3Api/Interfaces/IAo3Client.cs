@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using HtmlAgilityPack;
 
-namespace Ao3Domain.Interfaces
+namespace Ao3Api.Interfaces
 {
     public interface IAo3Client
     {

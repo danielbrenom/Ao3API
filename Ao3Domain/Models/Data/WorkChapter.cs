@@ -8,13 +8,13 @@ namespace Ao3Domain.Models.Data
         [JsonProperty("WorkDetails")]
         public WorkIndexing WorkDetails { get; set; }
         [JsonProperty("ChapterTitle")]
-        public string Title { get; set; }
+        public string ChapterTitle { get; set; }
         [JsonProperty("ChapterSummary")]
-        public string Summary { get; set; }
+        public string ChapterSummary { get; set; }
         [JsonProperty("ChapterNotes")]
-        public string Notes { get; set; }
+        public string ChapterNotes { get; set; }
         [JsonProperty("ChapterParagraphs")]
-        public List<string> Paragraphs { get; set; }
+        public List<string> ChapterParagraphs { get; set; }
         
     }
 }

@@ -1,0 +1,17 @@
+﻿version: '2.1'
+
+services:
+  ao3api:
+    image: ao3api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+    networks:
+      - ao3api-network
+networks:
+  ao3api-network:
+    driver: bridge

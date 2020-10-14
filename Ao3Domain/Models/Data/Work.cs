@@ -15,7 +15,7 @@ namespace Ao3Domain.Models.Data
         [JsonProperty("Category")] public List<string> Category { get; set; }
         [JsonProperty("Author")] public string Author { get; set; }
         [JsonProperty("Summary")] public string Summary { get; set; }
-        [JsonProperty("Lang")] public string Language { get; set; }
+        [JsonProperty("Language")] public string Language { get; set; }
 
         [JsonProperty("Words")] public int Words { get; set; }
         [JsonProperty("Comments")] public int Comments { get; set; }

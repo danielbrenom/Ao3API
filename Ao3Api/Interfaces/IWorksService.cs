@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Ao3Domain.Models.Data;
 using Ao3Domain.Models.Request;
 
-namespace Ao3Domain.Interfaces
+namespace Ao3Api.Interfaces
 {
     public interface IWorksService
     {

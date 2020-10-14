@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Ao3Domain.Models.Data;
 using System.Collections.Generic;
+using Ao3Domain.Models.Data;
 
 namespace Ao3Domain.Models.Response
 {

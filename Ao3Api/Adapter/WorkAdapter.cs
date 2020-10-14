@@ -70,7 +70,7 @@ namespace Ao3Api.Adapter
                 var details = chapter.QuerySelector("a");
                 indexStructure.Add(new ChapterListing
                 {
-                    ChapterId = Sanitizer.ChapterSanitizer(details.Attributes["href"].Value), 
+                    Id = Sanitizer.ChapterSanitizer(details.Attributes["href"].Value), 
                     Title = details.InnerText
                 });
             });

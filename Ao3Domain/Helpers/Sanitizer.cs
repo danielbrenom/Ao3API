@@ -10,17 +10,22 @@ namespace Ao3Domain.Helpers
             return text is null ? string.Empty : text.Trim();
         }
 
+        public static string TextSanitizer(string text)
+        {
+            return text is null ? string.Empty : Regex.Replace(text.Trim(), @"\s{3,}", "").Replace("&nbsp;", " ");
+        }
+
         public static string ListToStringSanitizer(List<string> text)
         {
             var resultString = "";
-            text.ForEach(element => { resultString += LineSpaceSanitizer(element); });
+            text.ForEach(element => { resultString += TextSanitizer(element); });
             return resultString;
         }
         
         public static List<string> ListToListSanitizer(List<string> text)
         {
             var stringList = new List<string>();
-            text.ForEach(element => { if(element != string.Empty || element != "") stringList.Add(LineSpaceSanitizer(element)); });
+            text.ForEach(element => { if(element != string.Empty || element != "") stringList.Add(TextSanitizer(element)); });
             return stringList;
         }
 

@@ -5,21 +5,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="10.0.0" />
-      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
-      <PackageReference Include="Fizzler.Systems.HtmlAgilityPack" Version="1.2.1" />
-      <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="AutoMapper" Version="10.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+        <PackageReference Include="Fizzler.Systems.HtmlAgilityPack" Version="1.2.1" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Remove="Configurations\DatabaseContext.cs" />
-      <Compile Remove="Configurations\HungryPizzaMongoSettings.cs" />
+        <ProjectReference Include="..\Ao3Domain\Ao3Domain.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Ao3Domain\Ao3Domain.csproj" />
-    </ItemGroup>
-
 
 </Project>

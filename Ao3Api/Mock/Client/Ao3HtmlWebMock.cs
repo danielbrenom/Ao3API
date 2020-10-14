@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Ao3Api.Mock.Client.Responses;
-using Ao3Domain.Interfaces;
+using Ao3Api.Interfaces;
 using AutoMapper.Internal;
 using HtmlAgilityPack;
 

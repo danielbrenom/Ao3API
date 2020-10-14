@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Ao3Api.Adapter;
-using Ao3Domain.Interfaces;
+using Ao3Api.Interfaces;
 using Ao3Domain.Models.Data;
 using Ao3Domain.Models.Request;
 using Microsoft.Extensions.Caching.Memory;

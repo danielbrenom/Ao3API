@@ -24,13 +24,13 @@ namespace Ao3Api.Adapter
             var comments = details.QuerySelector("dd.stats dl.stats dd.comments");
             var workChapter = new WorkChapter
             {
-                Title = chapter.QuerySelector("div.chapter h3.title a")?.InnerText,
-                Summary = Sanitizer.LineSpaceSanitizer(preface.QuerySelector("div.summary blockquote p")?.InnerText),
-                Notes = Sanitizer.LineSpaceSanitizer(chapter.QuerySelector("div.chapter div.notes p")?.InnerText),
+                ChapterTitle = chapter.QuerySelector("div.chapter h3.title a")?.InnerText,
+                ChapterSummary = Sanitizer.TextSanitizer(preface.QuerySelector("div.summary blockquote p")?.InnerText),
+                ChapterNotes = Sanitizer.TextSanitizer(chapter.QuerySelector("div.chapter div.notes p")?.InnerText),
                 WorkDetails = new WorkIndexing
                 {
                     Author = preface.QuerySelector("h3.heading a").InnerText,
-                    Title = Sanitizer.LineSpaceSanitizer(preface.QuerySelector("h2.title").InnerText),
+                    Title = Sanitizer.TextSanitizer(preface.QuerySelector("h2.title").InnerText),
                     WorkId = int.Parse(Sanitizer.ChapterToIdSanitizer(chapter
                         .QuerySelector("div.chapter h3.title a")
                         .Attributes["href"].Value)),
@@ -53,7 +53,7 @@ namespace Ao3Api.Adapter
                     Comments = int.Parse(comments is null ? "0" : Sanitizer.NumberSanitizer(comments.InnerText)),
                     Kudos = int.Parse(kudos is null ? "0" : Sanitizer.NumberSanitizer(kudos.InnerText))
                 },
-                Paragraphs = Sanitizer.ListToListSanitizer(chapter.QuerySelectorAll("div.userstuff p")
+                ChapterParagraphs = Sanitizer.ListToListSanitizer(chapter.QuerySelectorAll("div.userstuff p")
                     .Select(el => el.InnerText).ToList())
             };
             return workChapter;
