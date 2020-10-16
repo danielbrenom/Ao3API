@@ -15,6 +15,11 @@ namespace Ao3Domain.Helpers
             return text is null ? string.Empty : Regex.Replace(text.Trim(), @"\s{3,}", "").Replace("&nbsp;", " ");
         }
 
+        public static string ParathesisSanitizer(string text)
+        {
+            return text is null ? string.Empty : Regex.Replace(text.Trim(), @"[()]", "");
+        }
+
         public static string ListToStringSanitizer(List<string> text)
         {
             var resultString = "";

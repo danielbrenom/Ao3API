@@ -1,13 +1,25 @@
 ﻿version: '2.1'
 
 services:
-  ao3api:
+  ao3api-dev:
     image: ao3api
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+    networks:
+      - ao3api-network
+  ao3api-stagin:
+    image: ao3api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging        
+    restart: "no"
     ports:
       - "5000:80"
     networks:

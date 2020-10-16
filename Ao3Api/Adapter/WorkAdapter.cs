@@ -71,7 +71,8 @@ namespace Ao3Api.Adapter
                 indexStructure.Add(new ChapterListing
                 {
                     Id = Sanitizer.ChapterSanitizer(details.Attributes["href"].Value), 
-                    Title = details.InnerText
+                    Title = details.InnerText,
+                    CreationDate = Sanitizer.ParathesisSanitizer(chapter.QuerySelector("span").InnerText)
                 });
             });
             return new WorkIndexing
