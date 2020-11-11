@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ao3Api", "Ao3Api\Ao3Api.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ao3Domain", "Ao3Domain\Ao3Domain.csproj", "{FA86863D-F095-4CA9-B48E-00DCB79383EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ao3Functions", "Ao3Functions\Ao3Functions.csproj", "{4502BF8F-0094-409B-8B81-982AFBD008ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{FA86863D-F095-4CA9-B48E-00DCB79383EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA86863D-F095-4CA9-B48E-00DCB79383EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA86863D-F095-4CA9-B48E-00DCB79383EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4502BF8F-0094-409B-8B81-982AFBD008ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4502BF8F-0094-409B-8B81-982AFBD008ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4502BF8F-0094-409B-8B81-982AFBD008ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4502BF8F-0094-409B-8B81-982AFBD008ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

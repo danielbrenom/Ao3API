@@ -46,6 +46,7 @@ namespace Ao3Api.Adapter
                         Summary = Sanitizer.ListToStringSanitizer(htmlNode.QuerySelectorAll("blockquote.summary p").Select(sum => sum.InnerText).ToList()),
                         Language = htmlNode.QuerySelector("dl.stats dd.language").InnerText ?? "",
                         Tags = Sanitizer.ListToListSanitizer(htmlNode.QuerySelectorAll("ul.tags li").Select(el => el.QuerySelector("a").InnerText).ToList()),
+                        RequiredTags = Sanitizer.ListToListSanitizer(htmlNode.QuerySelectorAll("div.header ul.required-tags li a").Select(tag => tag.InnerText).ToList()),
                         Words = int.Parse(words is null ? "0" : Sanitizer.NumberSanitizer(words.InnerText)),
                         Comments = int.Parse(comments is null ? "0" : Sanitizer.NumberSanitizer(comments.InnerText)),
                         Kudos = int.Parse(kudos is null ? "0" : Sanitizer.NumberSanitizer(kudos.InnerText)),

@@ -12,6 +12,7 @@ namespace Ao3Domain.Models.Data
         [JsonProperty("Relationships")] public List<string> Relationships { get; set; }
         [JsonProperty("Characters")] public List<string> Characters { get; set; }
         [JsonProperty("Tags")] public List<string> Tags { get; set; }
+        [JsonProperty("RequiredTags")] public List<string> RequiredTags { get; set; }
         [JsonProperty("Category")] public List<string> Category { get; set; }
         [JsonProperty("Author")] public string Author { get; set; }
         [JsonProperty("Summary")] public string Summary { get; set; }
