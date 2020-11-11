@@ -14,4 +14,6 @@ This project is not hosted in any plataform and there are no plans to do it, by 
 
 **Any and all hosted systems derived from this project have no relation whatsoever and the original author claims no right to it.**
 
+It's also recommended to desist to do so, and if one chooses to go on with this intention, the original author demands to not be linked or having any right whatsoever. Any action taken from any party using this project as base is totally theirs.
+
 As the plataform is open-source and non-profit this project is also.
